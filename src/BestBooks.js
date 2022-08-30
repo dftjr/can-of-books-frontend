@@ -1,7 +1,10 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import axios from 'axios';
+import './BestBooks.css';
 import { Container } from 'react-bootstrap';
+
+let SERVER = process.env.REACT_APP_SERVER;
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -14,7 +17,8 @@ class BestBooks extends React.Component {
   /* TODO: Make a GET request to your API to fetch all the books from the database  */
   getBooks = async () => {
     try {
-      let results = await axios.get(`${process.env.REACT_APP_SERVER}/books`);
+      let results = await axios.get(`${SERVER}/books`);
+      console.log(results);
       this.setState({
         books: results.data
       });
@@ -31,15 +35,16 @@ class BestBooks extends React.Component {
 
     /* TODO: render all the books in a Carousel */
     console.log(this.state.books);
-    let carouselItems = this.state.books.map((data, index) => (
-      <Carousel.Item key={index}>
+    let carouselItems = this.state.books.map((book, index) => (
+      <Carousel.Item key={book._id}>
         <img
-          src={data.picture}
-          alt={'hi'}
+          className="d-block w-100"
+          src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
+          alt="Books"
         />
         <Carousel.Caption>
-          <h3>Title:: {data.title}</h3>
-          <h3>Description: {data.description}</h3>
+          <h3>Title: {book.title}</h3>
+          <h3>Description: {book.description}</h3>
         </Carousel.Caption>
       </Carousel.Item>
     ))
