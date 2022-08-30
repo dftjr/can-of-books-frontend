@@ -26,7 +26,7 @@ This app will return to the client an array of books that the devs of the app ha
 ### Backend Terminal Setup
 **STEP 3:** Node modules - In the backend terminal type: <code>npm i</code>
 
-**STEP 4:** Nodemon (if not already installed as global)- In the backend terminal type: <code>npm install -g nodemon</code>
+**STEP 4:** Nodemon (if not already installed as global)- In the backend terminal type: <code>npm i -g nodemon</code>
 
 **STEP 5:** User will need to provide their own MongoDB database link. Please see the <code>.env.sample</code> files for proper setup
 
