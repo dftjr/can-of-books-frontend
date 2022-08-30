@@ -2,13 +2,21 @@
 
 **Author**: David Tusia
 
-**Version**: 1.0.1
+**Version**: 1.0.2
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+User must take the following steps:
+**STEP 1:** git clone the frontend code here:
+**STEP 2:** git clone the backend code here:
+**STEP 3:** install npm to both local repos. In both terminals type: <code>npm install</code>
+**STEP 4:** install nodemon to backend repo. In the terminal for the backend repo type: <code>npm install nodemon</code>
+**STEP 5:** run the backend repo. In the terminal for the backend repo type: <code>nodemon</code>
+**STEP 6:** In the terminal for the back end
+**STEP 7:** git clone the backend code here:
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
@@ -28,7 +36,7 @@ Javascript, HTML, CSS, REACT, NETLIFY, HEROKU
 # Time Estimates
 <!-- For each of the lab features, make an estimate of the time it will take you to complete the feature, and record your start and finish times for that feature: -->
 
-Name of feature: Foundation of app setup
+Name of feature: Setup and foundation
 
 Estimate of time needed to complete: 30min
 
@@ -37,6 +45,18 @@ Start time: 2:30pm
 Finish time: 3:00
 
 Actual time needed to complete: 30min
+
+<br>
+
+Name of feature: Backend data retrieval. Nav Link setup. Carousel addition.
+
+Estimate of time needed to complete: 2 hr
+
+Start time: 3:00pm
+
+Finish time: 5:30pm
+
+Actual time needed to complete: 2 hours 30min
 
 ## LOGISTICS
 
