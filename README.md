@@ -24,28 +24,22 @@ This app will return to the client an array of books that the devs of the app ha
 **STEP 2:** Git clone the backend code here: [Backend Repo](https://github.com/m11gz/can-of-books-backend.git)
 
 ### Backend Terminal Setup
-**STEP 3:** Node modules - In the backend terminal type: <code>npm install</code>
+**STEP 3:** Node modules - In the backend terminal type: <code>npm i</code>
 
-**STEP 4:** Axios - In the backend terminal type: <code>npm install axios</code>
+**STEP 4:** Nodemon (if not already installed as global)- In the backend terminal type: <code>npm install -g nodemon</code>
 
-**STEP 5:** Nodemon (if not already installed as global)- In the backend terminal type: <code>npm install -g nodemon</code>
+**STEP 5:** User will need to provide their own MongoDB database link. Please see the <code>.env.sample</code> files for proper setup
 
-**STEP 6:** User will need to provide their own MongoDB database link. Please see the <code>.env.sample</code> files for proper setup
+**STEP 6:** Submit the data for MongoDB database. In the terminal for the backend repo type: <code>node seed.js</code>
 
-**STEP 7:** Submit the data for MongoDB database. In the terminal for the backend repo type: <code>node seed.js</code>
-
-**STEP 8:** Run the backend repo. In the terminal for the backend repo type: <code>nodemon</code>
+**STEP 7:** Run the backend repo. In the terminal for the backend repo type: <code>nodemon</code>
 
 ### Frontend Terminal Setup
-**STEP 9:** Node modules - In the frontend terminal type: <code>npm install</code>
+**STEP 8:** Node modules - In the frontend terminal type: <code>npm i</code>
 
-**STEP 10:** Bootstrap - In the frontend terminal type: <code>npm install react-bootstrap</code>
+**STEP 9:** Run the frontend repo. In the terminal for the frontend repo type: <code>npm start</code>
 
-**STEP 11:** Axios - In the frontend terminal type: <code>npm install axios</code>
-
-**STEP 8:** Run the frontend repo. In the terminal for the frontend repo type: <code>npm start</code>
-
-**STEP 12:** Happy hacking!
+**STEP 10:** Happy hacking!
 
 <br>
 
