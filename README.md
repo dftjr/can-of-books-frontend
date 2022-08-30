@@ -58,6 +58,7 @@ This app will return to the client an array of books that the devs of the app ha
 - REACT
 - NETLIFY
 - HEROKU
+- MongoDB
 
 <br>
 
