@@ -111,25 +111,25 @@ This app will return to the client an array of books that the devs of the app ha
 
 **What hours will you be available to communicate?**
 
-5-6pm in person. 10pm vutoff for work.
+_5-6pm in person. 10pm vutoff for work._
 
 **What platform will you use to communicate? **
 
-Discord
+_Discord_
 
 **How often will you take breaks?**
 
-Whenever needed
+_Whenever needed_
 
-**What is your plan if you start to fall behind?** 
+**What is your plan if you start to fall behind?**
 
-Talk, Plan, or ask for TA help.
+_Talk, Plan, or ask for TA help._
 
 <br>
 
 ## Cooperative
 
-Make a list of each parson’s strengths.
+**Make a list of each parson’s strengths.**
 
 ### TUSIA
 
@@ -148,27 +148,28 @@ Make a list of each parson’s strengths.
   
 **How can you best utilize these strengths in the development of your application?**
 
-In our different backgrounds in life it gives us the ability to look at our problems from different perspectives.
+_In our different backgrounds in life it gives us the ability to look at our problems from different perspectives._
  
 **In what areas do you each want to develop greater strength?**
 
-**T.** Working on dry code and arrow functions.
+**T.** _Working on dry code and arrow functions._
 
-**M.** Working on try catch and react.
+**M.** _Working on try catch and react._
 
 **Knowing that every person in your team needs the to understand the code, how do you plan to approach day-to-day development?**
 
-Each day we will decide to work on front and back end code. We weill also decide who will be drive and navigator. We are also going to decide when to take breaks. Make sure to be open to communication.
+_Each day we will decide to work on front and back end code. We weill also decide who will be drive and navigator. We are also going to decide when to take breaks. Make sure to be open to communication._
 
 ## Conflict Resolution
 
 **What will your team do if one person is pulling all the weight while the other person is not contributing?**
 
-Be receptive to criticism and be self aware of your progress.
+_Be receptive to criticism and be self aware of your progress._
+
 **What will your team do if one person is taking over the project and not letting the other member contribute?**vvvvvvv
 
-Go straight to leadership.
+_Go straight to leadership._
 
 **How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?**
 
-Constant communication within limits. Knowing each others strengths and weaknesses and helping each other with what we could use help in. "Scratch each others backs".
+_Constant communication within limits. Knowing each others strengths and weaknesses and helping each other with what we could use help in. "Scratch each others backs"._
