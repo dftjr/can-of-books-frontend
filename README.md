@@ -80,27 +80,27 @@ This app will return to the client an array of books that the devs of the app ha
 ## Time Estimates
 <!-- For each of the lab features, make an estimate of the time it will take you to complete the feature, and record your start and finish times for that feature: -->
 
-Name of feature: Setup and foundation
+**Name of feature:** Setup and foundation
 
-Estimate of time needed to complete: 30min
+**Estimate of time needed to complete:** 30min
 
-Start time: 2:30pm
+**Start time:** 2:30pm
 
-Finish time: 3:00
+**Finish time:** 3:00
 
-Actual time needed to complete: 30min
+**Actual time needed to complete:** 30min
 
 <br>
 
-Name of feature: Backend data retrieval. Nav Link setup. Carousel addition.
+**Name of feature:** Backend data retrieval. Nav Link setup. Carousel addition.
 
-Estimate of time needed to complete: 2 hr
+**Estimate of time needed to complete:** 2 hr
 
-Start time: 3:00pm
+**Start time:** 3:00pm
 
-Finish time: 5:30pm
+**Finish time:** 5:30pm
 
-Actual time needed to complete: 2 hours 30min
+**Actual time needed to complete:** 2 hours 30min
 
 <br>
 
@@ -112,7 +112,7 @@ Actual time needed to complete: 2 hours 30min
 
 5-6pm in person. 10pm vutoff for work.
 
-**What platform will you use to communicate? 
+**What platform will you use to communicate? **
 
 Discord
 
