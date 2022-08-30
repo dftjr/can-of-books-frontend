@@ -4,24 +4,62 @@
 
 **Version**: 1.0.2
 
+<br>
+
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
 
+This app will return to the client an array of books that the devs of the app have deemed to be great reads!
+
+<br>
+
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
-User must take the following steps:
-**STEP 1:** git clone the frontend code here:
-**STEP 2:** git clone the backend code here:
-**STEP 3:** install npm to both local repos. In both terminals type: <code>npm install</code>
-**STEP 4:** install nodemon to backend repo. In the terminal for the backend repo type: <code>npm install nodemon</code>
-**STEP 5:** run the backend repo. In the terminal for the backend repo type: <code>nodemon</code>
-**STEP 6:** In the terminal for the back end
-**STEP 7:** git clone the backend code here:
+
+**User must take the following steps:**
+
+### Initial Local Repository Pull
+**STEP 1:** Git clone the frontend code here: [Frontend Repo](https://github.com/dftjr/can-of-books-frontend.git)
+
+**STEP 2:** Git clone the backend code here: [Backend Repo](https://github.com/m11gz/can-of-books-backend.git)
+
+### Backend Terminal Setup
+**STEP 3:** Node modules - In the backend terminal type: <code>npm install</code>
+
+**STEP 4:** Axios - In the backend terminal type: <code>npm install axios</code>
+
+**STEP 5:** Nodemon (if not already installed as global)- In the backend terminal type: <code>npm install -g nodemon</code>
+
+**STEP 6:** User will need to provide their own MongoDB database link. Please see the <code>.env.sample</code> files for proper setup
+
+**STEP 7:** Submit the data for MongoDB database. In the terminal for the backend repo type: <code>node seed.js</code>
+
+**STEP 8:** Run the backend repo. In the terminal for the backend repo type: <code>nodemon</code>
+
+### Frontend Terminal Setup
+**STEP 9:** Node modules - In the frontend terminal type: <code>npm install</code>
+
+**STEP 10:** Bootstrap - In the frontend terminal type: <code>npm install react-bootstrap</code>
+
+**STEP 11:** Axios - In the frontend terminal type: <code>npm install axios</code>
+
+**STEP 8:** Run the frontend repo. In the terminal for the frontend repo type: <code>npm start</code>
+
+**STEP 12:** Happy hacking!
+
+<br>
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 
-Javascript, HTML, CSS, REACT, NETLIFY, HEROKU
+- Javascript 
+- HTML
+- CSS
+- REACT
+- NETLIFY
+- HEROKU
+
+<br>
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
@@ -30,10 +68,16 @@ Javascript, HTML, CSS, REACT, NETLIFY, HEROKU
 
 08-29-2022 3:00pm - Initial setup complete, Front-end linked to the cloud.
 
+08-29-2022 10:00pm - App displays info to client of book titles, navigation setup to About Us page.
+
+<br>
+
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-# Time Estimates
+<br>
+
+## Time Estimates
 <!-- For each of the lab features, make an estimate of the time it will take you to complete the feature, and record your start and finish times for that feature: -->
 
 Name of feature: Setup and foundation
@@ -58,18 +102,35 @@ Finish time: 5:30pm
 
 Actual time needed to complete: 2 hours 30min
 
-## LOGISTICS
+<br>
 
-What hours will you be available to communicate? 5-6PM IN PERSON 10PM CUTOFF FOR WORK.
-What platform will you use to communicate (DISCORD)?
-How often will you take breaks? WHENEVER NEEDED
-What is your plan if you start to fall behind? TALK, PLAN, or ask for TA help.
+# TEAM CODE OF CONDUCT
+
+## Logistics
+
+**What hours will you be available to communicate?**
+
+5-6pm in person. 10pm vutoff for work.
+
+**What platform will you use to communicate? 
+
+Discord
+
+**How often will you take breaks?**
+
+Whenever needed
+
+**What is your plan if you start to fall behind?** 
+
+Talk, Plan, or ask for TA help.
+
+<br>
 
 ## Cooperative
 
 Make a list of each parson’s strengths.
 
-# TUSIA
+### TUSIA
 
 - CSS
 - JS
@@ -77,20 +138,36 @@ Make a list of each parson’s strengths.
 - LOGISTICS
 - OVERALL VISION
 
-# RODRIGUEZ
+### Rodriguez
 
 - CSS
 - JS
 - HTML
 - CREATIVITY
-  How can you best utilize these strengths in the development of your application? In our different backgrounds in life it gives us the ability to look at our problems from different perspectives.
-  In what areas do you each want to develop greater strength? T. Working on dry code and arrow functions.
-  M. Working on try catch and react.
-Knowing that every person in your team needs the to understand the code, how do you plan to approach day-to-day development? Each day we will decide to work on front and back end code. We weill also decide who will be drive and navigator. We are also going to decide when to take breaks. Make sure to be open to communication.
+  
+**How can you best utilize these strengths in the development of your application?**
 
-# Conflict Resolution
+In our different backgrounds in life it gives us the ability to look at our problems from different perspectives.
+ 
+**In what areas do you each want to develop greater strength?**
 
-What will your team do if one person is pulling all the weight while the other person is not contributing? Be receptive to criticism and be self aware of your progress.
-What will your team do if one person is taking over the project and not letting the other member contribute? Go straight to leadership.
-How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?
-Constant communication within limits. Knowing each others strengths and weaknesses and helping each other with what we could use help in. "Scratch each others backs. "
+**T.** Working on dry code and arrow functions.
+
+**M.** Working on try catch and react.
+
+**Knowing that every person in your team needs the to understand the code, how do you plan to approach day-to-day development?**
+
+Each day we will decide to work on front and back end code. We weill also decide who will be drive and navigator. We are also going to decide when to take breaks. Make sure to be open to communication.
+
+## Conflict Resolution
+
+**What will your team do if one person is pulling all the weight while the other person is not contributing?**
+
+Be receptive to criticism and be self aware of your progress.
+**What will your team do if one person is taking over the project and not letting the other member contribute?**vvvvvvv
+
+Go straight to leadership.
+
+**How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?**
+
+Constant communication within limits. Knowing each others strengths and weaknesses and helping each other with what we could use help in. "Scratch each others backs".
