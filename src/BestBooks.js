@@ -1,8 +1,7 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
 import axios from 'axios';
 import './BestBooks.css';
-import { Container, Button } from 'react-bootstrap';
+import { Container, Button, Carousel } from 'react-bootstrap';
 import BookFormModal from './BookFormModal.js';
 
 const SERVER = process.env.REACT_APP_SERVER;
@@ -17,7 +16,6 @@ class BestBooks extends React.Component {
     }
   }
 
-  /* TODO: Make a GET request to your API to fetch all the books from the database  */
   getBooks = async () => {
     try {
       let databaseBooks = await axios.get(`${SERVER}/books`);
@@ -32,8 +30,10 @@ class BestBooks extends React.Component {
 
   handleCreateBook = async (book) => {
     try {
+      console.log('this is working');
       let url = API_URL;
       let createdBook = await axios.post(url, book);
+      console.log(createdBook.data);
       this.setState({
         books: [...this.state.books, createdBook.data]
       })
@@ -51,6 +51,7 @@ class BestBooks extends React.Component {
       this.setState({
         books: updatedBooks
       })
+      this.getBooks();
     } catch (error) {
       console.log('We have an error: ', error.response.data);
     }
@@ -80,39 +81,12 @@ class BestBooks extends React.Component {
     });
   }
 
-  handleTitleInput = (e) => {
-    let input = e.target.value;
-    console.log(input)
-    this.setState({
-      title: input,
-    });
-  }
-
-  handleDescriptionInput = (e) => {
-    let input = e.target.value;
-    console.log(input);
-    this.setState({
-      description: input,
-    });
-  }
-
-  handleStatusInput = (e) => {
-    let input = e.target.value;
-    console.log(input);
-    this.setState({
-      status: input,
-    });
-  }
-
-
   componentDidMount() {
     this.getBooks();
   }
 
   render() {
 
-    /* TODO: render all the books in a Carousel */
-    console.log(this.state.books);
     let carouselItems = this.state.books.map((book, index) => (
       <Carousel.Item key={book._id}>
         <img
@@ -123,11 +97,9 @@ class BestBooks extends React.Component {
         <Carousel.Caption>
           <h3>Title: {book.title}</h3>
           <h3>Description: {book.description}</h3>
+          <h3>Status: {book.status}</h3>
+        <Button onClick={() => this.handleDeleteBook(book._id)}>Delete</Button>
         </Carousel.Caption>
-        
-        <Button
-          onClick={this.handleDeleteBook(book._id)}
-        >Delete Me</Button>
       </Carousel.Item>
     ))
 
@@ -135,8 +107,8 @@ class BestBooks extends React.Component {
       <>
         <h2>My Essential Lifelong Learning &amp; Formation Shelf</h2>
         <BookFormModal
-          onSubmit={this.handleBookSubmit}
-          onCreate={this.handleCreateBook}
+          handleBookSubmit={this.handleBookSubmit}
+          handleCreateBook={this.handleCreateBook}
           show={this.state.showModal}
           onHide={this.handleHideModal}
         /><Button
