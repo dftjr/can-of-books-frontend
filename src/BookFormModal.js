@@ -37,9 +37,20 @@ class BookFormModal extends Component {
   //   });
   // }
 
+  // handleBookSubmit = (e) => {
+  //   this.props.handleBookSubmit(e);
+  //   console.log('this was sent');
+  // }
+
   handleBookSubmit = (e) => {
-    this.props.handleBookSubmit(e);
-    console.log('this was sent');
+    e.preventDefault();
+    this.props.onHide();
+    const book = {
+      title: e.target.title.value,
+      description: e.target.description.value,
+      status: e.target.status.value
+    };
+    this.props.handleCreateBook(book);
   }
 
   render() {
