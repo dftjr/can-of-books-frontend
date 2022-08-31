@@ -1,16 +1,17 @@
 import React from "react";
 import { Modal, Form, Card, Container, Button } from "react-bootstrap";
+import { Component } from "react";
 
-class SubmitForm extends React.Component {
+class BookFormModal extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: null,
-      description: null,
-      activate: true
-    }
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     title: null,
+  //     description: null,
+  //     activate: true
+  //   }
+  // }
 
   // handleTitleInput = (e) => {
   //   let input = e.target.value;
@@ -37,28 +38,21 @@ class SubmitForm extends React.Component {
   // }
 
   handleBookSubmit = (e) => {
-    e.preventDefault();
-    // this.handleHideModal();
-    console.log('this was clicked');
-    const book = {
-      title: e.target.title.value,
-      description: e.target.description.value,
-      status: e.target.status.value
-    };
-    console.log(book);
-    this.props.onCreate(book);
+    this.props.handleBookSubmit(e);
+    console.log('this was sent');
   }
 
   render() {
 
-    console.log(this.state.title);
-    
+
+
     return (
       <Modal
         show={this.props.show}
+        onHide={this.props.onHide}
       >
         <Container>
-          <Card className="cardForm">
+          <Card className="booksDisplay">
             <Form onSubmit={this.handleBookSubmit}>
               <Form.Group controlId="title">
                 <Form.Label>Title</Form.Label>
@@ -89,7 +83,8 @@ class SubmitForm extends React.Component {
 
               <Button
                 disabled={false}
-                type="submit"> Add my book!
+                type="submit">
+                Add my book!
               </Button>
             </Form>
           </Card>
@@ -99,4 +94,4 @@ class SubmitForm extends React.Component {
   }
 }
 
-export default SubmitForm;
+export default BookFormModal;
