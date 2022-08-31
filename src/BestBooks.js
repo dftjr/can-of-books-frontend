@@ -5,7 +5,6 @@ import { Container, Button, Carousel } from 'react-bootstrap';
 import BookFormModal from './BookFormModal.js';
 
 const SERVER = process.env.REACT_APP_SERVER;
-const API_URL = `${SERVER}/books`;
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -18,8 +17,9 @@ class BestBooks extends React.Component {
 
   getBooks = async () => {
     try {
-      let databaseBooks = await axios.get(`${SERVER}/books`);
-      console.log(databaseBooks);
+      let url = `${SERVER}/books`
+      let databaseBooks = await axios.get(url);
+      // console.log(databaseBooks);
       this.setState({
         books: databaseBooks.data
       });
@@ -30,10 +30,9 @@ class BestBooks extends React.Component {
 
   handleCreateBook = async (book) => {
     try {
-      console.log('this is working');
-      let url = API_URL;
+      let url = `${SERVER}/books`
       let createdBook = await axios.post(url, book);
-      console.log(createdBook.data);
+      // console.log(createdBook.data);
       this.setState({
         books: [...this.state.books, createdBook.data]
       })
@@ -44,10 +43,10 @@ class BestBooks extends React.Component {
 
   handleDeleteBook = async (id) => {
     try {
-      console.log('this was clicked');
       let url = `${SERVER}/books/${id}`;
       await axios.delete(url);
       let updatedBooks = this.state.books.filter(book => book._id !== id);
+      // console.log(updatedBooks);
       this.setState({
         books: updatedBooks
       })
@@ -60,13 +59,25 @@ class BestBooks extends React.Component {
   handleBookSubmit = (e) => {
     e.preventDefault();
     this.handleHideModal();
-    console.log('this was clicked');
     const book = {
       title: e.target.title.value,
       description: e.target.description.value,
       status: e.target.status.value
     };
     this.handleCreateBook(book);
+  }
+
+  handleEditBook = async (book) => {
+    try {
+      let url = `${SERVER}/books`;
+      let editedBook = await axios.post(url, book);
+      // console.log(editedBook);
+      this.setState({
+        books: [...this.state.books, editedBook.data]
+      })
+    } catch (error) {
+      console.log('We have an error: ', error.response.data);
+    }
   }
 
   handleHideModal = () => {
@@ -98,7 +109,9 @@ class BestBooks extends React.Component {
           <h3>Title: {book.title}</h3>
           <h3>Description: {book.description}</h3>
           <h3>Status: {book.status}</h3>
-        <Button onClick={() => this.handleDeleteBook(book._id)}>Delete</Button>
+          <Button
+            onClick={() => this.handleDeleteBook(book._id)}
+          >Delete Book!</Button>
         </Carousel.Caption>
       </Carousel.Item>
     ))
@@ -113,8 +126,8 @@ class BestBooks extends React.Component {
           onHide={this.handleHideModal}
         /><Button
           onClick={this.handleShowModal}
-        >Click Me</Button>
-        
+        >Create Book!</Button>
+
 
         {this.state.books.length > 0 ? (
           <Container>

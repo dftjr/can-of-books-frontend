@@ -44,8 +44,6 @@ class BookFormModal extends Component {
 
   render() {
 
-
-
     return (
       <Modal
         show={this.props.show}
@@ -58,7 +56,7 @@ class BookFormModal extends Component {
                 <Form.Label>Title</Form.Label>
                 <Form.Control placeholder="Enter a book title"
                   type="text"
-                  onInput={this.handleTitleInput}
+                  // onInput={this.handleTitleInput}
                   input="title"
                 />
               </Form.Group>
@@ -67,7 +65,7 @@ class BookFormModal extends Component {
                 <Form.Label>Description</Form.Label>
                 <Form.Control placeholder="Enter a brief description"
                   type="text"
-                  onInput={this.handleDescriptionInput}
+                  // onInput={this.handleDescriptionInput}
                   input="description"
                 />
               </Form.Group>
@@ -76,7 +74,7 @@ class BookFormModal extends Component {
                 <Form.Label>Status</Form.Label>
                 <Form.Control placeholder="Enter a status description"
                   type="text"
-                  onInput={this.handleDescriptionInput}
+                  // onInput={this.handleDescriptionInput}
                   input="status"
                 />
               </Form.Group>
