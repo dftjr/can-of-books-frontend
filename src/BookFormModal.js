@@ -40,20 +40,18 @@ class BookFormModal extends Component {
   }
 
   handleBookSubmit = (e) => {
-    console.log(e);
     e.preventDefault();
-    this.props.onHide();
     const book = {
-      title: e.target.title1.value,
-      description: e.target.description1.value,
-      status: e.target.status1.value
+      title: e.target.title.value,
+      description: e.target.description.value,
+      status: e.target.status.value
     };
+    this.props.onHide();
     this.props.handleCreateBook(book);
-  }
+  } 
 
   render() {
 
-    console.log(this.state.title);
     return (
       <Modal
         show={this.props.show}
@@ -63,7 +61,7 @@ class BookFormModal extends Component {
         <Container>
           <Card className="booksDisplay">
             <Form onSubmit={this.handleBookSubmit}>
-              <Form.Group controlId="title1">
+              <Form.Group controlId="title">
                 <Form.Label>Title</Form.Label>
                 <Form.Control placeholder="Enter a book title"
                   type="text" 
@@ -73,7 +71,7 @@ class BookFormModal extends Component {
                 />
               </Form.Group>
 
-              <Form.Group controlId="description1">
+              <Form.Group controlId="description">
                 <Form.Label>Description</Form.Label>
                 <Form.Control placeholder="Enter a brief description"
                   type="text"
@@ -82,7 +80,7 @@ class BookFormModal extends Component {
                 />
               </Form.Group>
 
-              <Form.Group controlId="status1">
+              <Form.Group controlId="status">
                 <Form.Label>Status</Form.Label>
                 <Form.Control placeholder="Enter a status description"
                   type="text"

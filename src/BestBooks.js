@@ -13,7 +13,7 @@ class BestBooks extends React.Component {
     this.state = {
       books: [],
       showModal: false,
-      showEditModal: false
+      showEditModal: false,
     }
   }
 
@@ -21,7 +21,6 @@ class BestBooks extends React.Component {
     try {
       let url = `${SERVER}/books`
       let databaseBooks = await axios.get(url);
-      // console.log(databaseBooks);
       this.setState({
         books: databaseBooks.data
       });
@@ -34,7 +33,6 @@ class BestBooks extends React.Component {
     try {
       let url = `${SERVER}/books`
       let createdBook = await axios.post(url, book);
-      // console.log(createdBook.data);
       this.setState({
         books: [...this.state.books, createdBook.data]
       })
@@ -44,11 +42,11 @@ class BestBooks extends React.Component {
   }
 
   handleDeleteBook = async (id) => {
+    console.log(id);
     try {
       let url = `${SERVER}/books/${id}`;
       await axios.delete(url);
       let updatedBooks = this.state.books.filter(book => book._id !== id);
-      // console.log(updatedBooks);
       this.setState({
         books: updatedBooks
       })
@@ -56,17 +54,6 @@ class BestBooks extends React.Component {
     } catch (error) {
       console.log('We have an error: ', error.response.data);
     }
-  }
-
-  handleBookSubmit = (e) => {
-    e.preventDefault();
-    this.handleHideModal();
-    const book = {
-      title: e.target.title.value,
-      description: e.target.description.value,
-      status: e.target.status.value
-    };
-    this.handleCreateBook(book);
   }
 
   updateBook = async (updatedBook) => {
@@ -91,30 +78,6 @@ class BestBooks extends React.Component {
     }
   }
 
-  handleHideModal = () => {
-    this.setState({
-      showModal: false
-    });
-  }
-
-  handleShowModal = () => {
-    this.setState({
-      showModal: true
-    });
-  }
-
-  handleHideEditModal = () => {
-    this.setState({
-      showEditModal: false
-    });
-  }
-
-  handleShowEditModal = () => {
-    this.setState({
-      showEditModal: true
-    });
-  }
-
   componentDidMount() {
     this.getBooks();
   }
@@ -122,7 +85,10 @@ class BestBooks extends React.Component {
   render() {
 
     let carouselItems = this.state.books.map((book) => (
-      <Carousel.Item key={book._id}>
+      <Carousel.Item
+        key={book._id}
+        book={book}>
+
         <img
           className="d-block w-100"
           src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
@@ -139,9 +105,9 @@ class BestBooks extends React.Component {
             book={book}
             updateBook={this.updateBook}
             show={this.state.showEditModal}
-            onHide={this.handleHideEditModal} />
+            onHide={() => this.setState({ showEditModal: false })} />
           <Button
-            onClick={this.handleShowEditModal}
+            onClick={() => this.setState({ showEditModal: true })}
           >Edit Book!</Button>
         </Carousel.Caption>
       </Carousel.Item>
@@ -151,12 +117,11 @@ class BestBooks extends React.Component {
       <>
         <h2>My Essential Lifelong Learning &amp; Formation Shelf</h2>
         <BookFormModal
-          handleBookSubmit={this.handleBookSubmit}
           handleCreateBook={this.handleCreateBook}
           show={this.state.showModal}
-          onHide={this.handleHideModal}
+          onHide={() => this.setState({ showModal: false })}
         /><Button
-          onClick={this.handleShowModal}
+          onClick={() => this.setState({ showModal: true })}
         >Create Book!</Button>
 
         {this.state.books.length > 0 ? (

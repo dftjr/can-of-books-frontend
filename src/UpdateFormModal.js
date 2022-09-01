@@ -4,61 +4,57 @@ import { Component } from "react";
 
 class BookFormModal extends Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     title: null,
-  //     description: null,
-  //     activate: true
-  //   }
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: this.props.book.title,
+      description: this.props.book.description,
+      status: this.props.book.status,
+    }
+  }
 
-  // handleTitleInput = (e) => {
-  //   let input = e.target.value;
-  //   console.log(input)
-  //   this.setState({
-  //     title: input,
-  //   });
-  // }
+  handleTitleInput = (e) => {
+    console.log(e);
+    this.setState({
+      title: e.target.value,
+    });
+  }
 
-  // handleDescriptionInput = (e) => {
-  //   let input = e.target.value;
-  //   console.log(input);
-  //   this.setState({
-  //     description: input,
-  //   });
-  // }
+  handleDescriptionInput = (e) => {
+    this.setState({
+      description: e.target.value,
+    });
+  }
 
-  // handleStatusInput = (e) => {
-  //   let input = e.target.value;
-  //   console.log(input);
-  //   this.setState({
-  //     status: input,
-  //   });
-  // }
+  handleStatusInput = (e) => {
 
-  // handleBookEditSubmit = (e) => {
-  //   this.props.handleBookEditSubmit(e);
-  //   console.log('this was sent');
-  // }
+    this.setState({
+      status: e.target.value,
+    });
+  }
+
+  checkDisable = () => {
+    if (this.state.title.length < 1 || this.state.description.length < 1 || this.state.status.length < 1) {
+      return false;
+    }
+  }
 
   handleBookEditSubmit = (e) => {
     e.preventDefault();
-    let bookToEdit = this.props.book;
-    console.log(bookToEdit)
-    bookToEdit = {
-      ...bookToEdit,
-      title: e.target.title.value,
-      description: e.target.description.value,
-      status: e.target.status.value,
+   
+    let updatedBook = {
+      title: e.target.title.value || this.props.book.title,
+      description: e.target.description.value || this.props.book.description,
+      status: e.target.status.value || this.props.book.status,
+      _id: this.props.book._id,
+      __v: this.props.book.__v
     };
-    // this.props.onHide();
-    this.props.updateBook(bookToEdit);
+    this.props.onHide();
+    this.props.updateBook(updatedBook);
   }
 
   render() {
 
-    console.log(this.props.book);
     return (
       <Modal
         show={this.props.show}
@@ -71,8 +67,8 @@ class BookFormModal extends Component {
                 <Form.Label>Title</Form.Label>
                 <Form.Control placeholder="Enter a book title"
                   type="text"
-                  // onInput={this.handleTitleInput}
                   input="title"
+                  onInput={this.handleTitleInput}
                   defaultValue={this.props.book.title}
                 />
               </Form.Group>
@@ -81,8 +77,8 @@ class BookFormModal extends Component {
                 <Form.Label>Description</Form.Label>
                 <Form.Control placeholder="Enter a brief description"
                   type="text"
-                  // onInput={this.handleDescriptionInput}
                   input="description"
+                  onInput={this.handleDescriptionInput}
                   defaultValue={this.props.book.description}
                 />
               </Form.Group>
@@ -91,14 +87,14 @@ class BookFormModal extends Component {
                 <Form.Label>Status</Form.Label>
                 <Form.Control placeholder="Enter a status description"
                   type="text"
-                  // onInput={this.handleDescriptionInput}
                   input="status"
+                  onInput={this.handleStatusInput}
                   defaultValue={this.props.book.status}
                 />
               </Form.Group>
 
               <Button
-                disabled={false}
+                disabled={this.state.title.length < 1 || this.state.description.length < 1 || this.state.status.length < 1}
                 type="submit">
                 Complete Edit
               </Button>
