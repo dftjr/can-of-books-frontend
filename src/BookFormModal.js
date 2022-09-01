@@ -4,94 +4,95 @@ import { Component } from "react";
 
 class BookFormModal extends Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     title: null,
-  //     description: null,
-  //     activate: true
-  //   }
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: '',
+      description: '',
+      status: '',
+    }
+  }
 
-  // handleTitleInput = (e) => {
-  //   let input = e.target.value;
-  //   console.log(input)
-  //   this.setState({
-  //     title: input,
-  //   });
-  // }
+  handleTitleInput = (e) => {
+    console.log(e);
+    this.setState({
+      title: e.target.value,
+    });
+  }
 
-  // handleDescriptionInput = (e) => {
-  //   let input = e.target.value;
-  //   console.log(input);
-  //   this.setState({
-  //     description: input,
-  //   });
-  // }
+  handleDescriptionInput = (e) => {
+    this.setState({
+      description: e.target.value,
+    });
+  }
 
-  // handleStatusInput = (e) => {
-  //   let input = e.target.value;
-  //   console.log(input);
-  //   this.setState({
-  //     status: input,
-  //   });
-  // }
+  handleStatusInput = (e) => {
 
-  // handleBookSubmit = (e) => {
-  //   this.props.handleBookSubmit(e);
-  //   console.log('this was sent');
-  // }
+    this.setState({
+      status: e.target.value,
+    });
+  }
+
+  checkDisable = () => {
+    if (this.state.title.length < 1 || this.state.description.length < 1 || this.state.status.length < 1) {
+      return false;
+    }
+  }
 
   handleBookSubmit = (e) => {
+    console.log(e);
     e.preventDefault();
     this.props.onHide();
     const book = {
-      title: e.target.title.value,
-      description: e.target.description.value,
-      status: e.target.status.value
+      title: e.target.title1.value,
+      description: e.target.description1.value,
+      status: e.target.status1.value
     };
     this.props.handleCreateBook(book);
   }
 
   render() {
 
+    console.log(this.state.title);
     return (
       <Modal
         show={this.props.show}
         onHide={this.props.onHide}
       >
+
         <Container>
           <Card className="booksDisplay">
             <Form onSubmit={this.handleBookSubmit}>
-              <Form.Group controlId="title">
+              <Form.Group controlId="title1">
                 <Form.Label>Title</Form.Label>
                 <Form.Control placeholder="Enter a book title"
-                  type="text"
-                  // onInput={this.handleTitleInput}
+                  type="text" 
+                  required
                   input="title"
+                  onInput={this.handleTitleInput}
                 />
               </Form.Group>
 
-              <Form.Group controlId="description">
+              <Form.Group controlId="description1">
                 <Form.Label>Description</Form.Label>
                 <Form.Control placeholder="Enter a brief description"
                   type="text"
-                  // onInput={this.handleDescriptionInput}
                   input="description"
+                  onInput={this.handleDescriptionInput}
                 />
               </Form.Group>
 
-              <Form.Group controlId="status">
+              <Form.Group controlId="status1">
                 <Form.Label>Status</Form.Label>
                 <Form.Control placeholder="Enter a status description"
                   type="text"
-                  // onInput={this.handleDescriptionInput}
                   input="status"
+                  onInput={this.handleStatusInput}
                 />
               </Form.Group>
 
               <Button
-                disabled={false}
+                disabled={this.state.title.length < 1 || this.state.description.length < 1 || this.state.status.length < 1}
                 type="submit">
                 Add my book!
               </Button>

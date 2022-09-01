@@ -83,7 +83,8 @@ class BestBooks extends React.Component {
           exsistingBooks;
       })
       this.setState({
-        books: updatedBookArr
+        books: updatedBookArr,
+        showEditModal: false
       })
     } catch (error) {
       console.log('We have an error: ', error.response.data);

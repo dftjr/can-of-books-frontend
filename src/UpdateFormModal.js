@@ -44,19 +44,21 @@ class BookFormModal extends Component {
 
   handleBookEditSubmit = (e) => {
     e.preventDefault();
-    this.props.onHide();
     let bookToEdit = this.props.book;
+    console.log(bookToEdit)
     bookToEdit = {
       ...bookToEdit,
       title: e.target.title.value,
       description: e.target.description.value,
       status: e.target.status.value,
     };
+    // this.props.onHide();
     this.props.updateBook(bookToEdit);
   }
 
   render() {
 
+    console.log(this.props.book);
     return (
       <Modal
         show={this.props.show}
@@ -71,6 +73,7 @@ class BookFormModal extends Component {
                   type="text"
                   // onInput={this.handleTitleInput}
                   input="title"
+                  defaultValue={this.props.book.title}
                 />
               </Form.Group>
 
@@ -80,6 +83,7 @@ class BookFormModal extends Component {
                   type="text"
                   // onInput={this.handleDescriptionInput}
                   input="description"
+                  defaultValue={this.props.book.description}
                 />
               </Form.Group>
 
@@ -89,13 +93,14 @@ class BookFormModal extends Component {
                   type="text"
                   // onInput={this.handleDescriptionInput}
                   input="status"
+                  defaultValue={this.props.book.status}
                 />
               </Form.Group>
 
               <Button
                 disabled={false}
                 type="submit">
-                Add my book!
+                Complete Edit
               </Button>
             </Form>
           </Card>
